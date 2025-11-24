@@ -17,10 +17,8 @@ public class HogwartsStorage {
     private ArrayList<Character> characters = new ArrayList<>();
 
     public HogwartsStorage() {
-        this.characters = characters;
         Gson gson = new GsonBuilder().create();
-        HttpClient client = HttpClient.newHttpClient();
-        try {
+        try (HttpClient client = HttpClient.newHttpClient()){
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://hp-api.onrender.com/api/characters/students"))
                     .build();
@@ -33,7 +31,7 @@ public class HogwartsStorage {
     }
 
     public ArrayList<Character> getHouseGryffindor() {
-        return new ArrayList<Character>(characters
+        return new ArrayList<>(characters
                 .stream()
                 .filter(c -> c.getHouse() == House.GRYFFINDOR)
                 .sorted()
@@ -42,7 +40,7 @@ public class HogwartsStorage {
     }
 
     public ArrayList<Character> getHouseSlytherin() {
-        return new ArrayList<Character>(characters
+        return new ArrayList<>(characters
                 .stream()
                 .filter(c -> c.getHouse() == House.SLYTHERIN)
                 .sorted()
