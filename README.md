@@ -1,6 +1,4 @@
-# Opgaver lektion 25
-
-Hent projektet fra https://github.com/benn-christensen/Prog1Lektion25.git
+# Opgaver lektion 29
 
 ## Opgave 1
 
