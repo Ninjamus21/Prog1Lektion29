@@ -32,4 +32,9 @@ public class Team {
     public int getGoalsAgainst() {
         return goalsAgainst;
     }
+
+    @Override
+    public String toString() {
+        return name + " points: " + points;
+    }
 }
